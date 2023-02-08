@@ -1,0 +1,15 @@
+{%extends 'PriSection.html' %}
+
+{%block title%}
+Users List
+{%endblock%}
+
+
+{%block parentBody%}
+{{object_list}}
+{%for user in object_list%}
+<div>{{user.uid}} <b>
+{{user.username}}</b>
+</div>
+{%endfor%}
+{%endblock%}

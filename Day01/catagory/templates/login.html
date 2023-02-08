@@ -1,0 +1,26 @@
+{%extends 'PriSection.html' %}
+
+{%block title%}
+Login
+{%endblock%}
+
+{%block parentBody%}
+
+<h1> Login </h1>
+{{Alert}}
+<form method="post">
+      {%csrf_token%}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail2" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" name="password">
+  </div>
+
+    <div class="mb-3">Dont have account ?, Easy <a href="{% url 'register'%}">Register</a> here</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{%endblock%}

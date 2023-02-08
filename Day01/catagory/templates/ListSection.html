@@ -1,0 +1,30 @@
+{%extends 'PriSection.html' %}
+
+{%block title%}
+List Section
+{%endblock%}
+
+{%block parentBody%}
+<h1> here you will List Sections from Database </h1>
+<table class="table table-dark table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Section Name</th>
+    <th>Methods</th>
+  </tr>
+
+{%for msg in ListSec%}
+    <tr>
+    <td>{{msg.id}}</td>
+    <td>{{msg.section_name}}</td>
+    <td >
+        <a href="{% url 'UpdateSec' msg.id %}" style="color:silver;">Update</a>
+        <a href="{% url 'DeleteSection' msg.id%}" style="color:silver;">delete</a>
+    </td>
+    </tr>
+
+{%endfor%}
+
+</table>
+{%endblock%}
+
